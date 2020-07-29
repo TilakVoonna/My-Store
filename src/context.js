@@ -21,14 +21,17 @@ class ProductProvider extends Component {
   };
   componentDidMount() {
     this.setProducts();
+    console.log(storeProducts);
   }
 
   setProducts = () => {
     let products = [];
-    storeProducts.forEach(item => {
-      const singleItem = { ...item };
-      products = [...products, singleItem];
-    });
+  //  storeProducts.forEach(item => {
+  //    const singleItem = { ...item };
+  //    products = [...products, singleItem];
+  //  });
+  products=[...storeProducts];
+
     this.setState(() => {
       return { products };
     }, this.checkCartItems);
